@@ -20,7 +20,7 @@ class Proveedor extends Model
         'email',
         'estado',
     ];
-    public timestamps = false;
+    public $timestamps = false;
 
     
 }

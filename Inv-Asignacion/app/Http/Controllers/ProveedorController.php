@@ -12,7 +12,7 @@ class ProveedorController extends Controller
     public function index()
     {
         $proveedor = Proveedor::all();
-        return view('proveedor.index'), with('proveedor', $proveedor);
+        return view('proveedor.index')->with('proveedor', $proveedor);
     }
 
     public function create()
@@ -43,7 +43,7 @@ class ProveedorController extends Controller
         //
     }
 
-    public function edit(Proveedor $proveedor)
+    public function edit(Proveedor $proveedor, Request $request)
     {
         //
         $idproveedor = $request->input('idproveedor');
@@ -62,7 +62,7 @@ class ProveedorController extends Controller
     {
         //
 
-        validatedata = $request,validate( [
+        $validatedata = $request->validate( [
             'nombre' => 'required',
             'nit' => 'required',
             'direccion' => 'required',

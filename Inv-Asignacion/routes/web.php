@@ -8,6 +8,7 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProveedorController;
+use Illuminate\Support\Facades\Auth;
 
 
 /*
@@ -24,7 +25,7 @@ use App\Http\Controllers\ProveedorController;
 // ! RUTAS PARA VISUALIZAR LAS PAGINAS
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();
@@ -66,3 +67,6 @@ Route::get('/proveedor', function () {
 Route::get('/usuarios', function () {
     return view("usuarios");
 });
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
