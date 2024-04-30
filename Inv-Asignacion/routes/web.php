@@ -67,6 +67,4 @@ Route::get('/proveedor', function () {
 Route::get('/usuarios', function () {
     return view("usuarios");
 });
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
