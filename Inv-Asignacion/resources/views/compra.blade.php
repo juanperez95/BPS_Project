@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú de la Barra Lateral</title>
+  <title>Compras | Inv-Asignacion</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
+  <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
       <ul>
         <div class="active-tab"></div>
         <li class="tooltip-element" data-tooltip="0">
-          <a href="{{ url('asignacion_diadema') }}" class="active" data-active="0">
+          <a href="{{ url('asignacion_diadema') }}" data-active="0">
             <div class="icon">
               <i class='bx bx-speaker'></i>
               <i class='bx bxs-speaker'></i>
@@ -56,7 +57,7 @@
           </a>
         </li>
         <li class="tooltip-element" data-tooltip="3">
-          <a href="{{ url('compra') }}" data-active="3">
+          <a href="{{ url('compra') }}" class="active" data-active="3">
             <div class="icon">
               <i class='bx bx-basket'></i>
               <i class='bx bxs-basket'></i>
@@ -70,15 +71,15 @@
               <i class='bx bx-fridge'></i>
               <i class='bx bxs-fridge'></i>
             </div>
-            <span class="link hide">Proveedor</span>
+            <span class="link hide">Proveedores</span>
           </a>
         </li>
         <div class="tooltip">
-          <span class="show">Diademas</span>
+          <span>Diademas</span>
           <span>Componentes</span>
-          <span>Proveedores</span>
-          <span>Compras</span>
           <span>Producto</span>
+          <span class="show">Compras</span>
+          <span>Proveedores</span>
         </div>
       </ul>
 
@@ -147,11 +148,11 @@
   <main>
     <h1>Gestion de compras</h1>
     <p class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur animi voluptatibus cum maxime distinctio
-      iste quod deleniti eius, autem voluptates cumque suscipit iure quasi eligendi ullam. Sapiente eligendi porro
-      reprehenderit corrupti error facilis quo, fugiat fugit? Maiores aliquam ad, molestiae iste nihil, commodi
-      doloremque tempore excepturi aut id ducimus unde?
+      La gestión de compras es una herramient esencial para mantener el control sobre los productos que se adquieren en la empresa, ya que permite registrar cada una de las compras realizadas, y así tener un seguimiento de los productos que se encuentran en inventario. De esta manera, se pueden realizar informes sobre las compras realizadas, como por ejemplo, el valor total de las compras, los productos más comprados, entre otros.
     </p>
+
+    
+
     <p class="copyright">
       &copy; 2024 - <span>Savijp</span> Todos los Derechos Reservados.
     </p>

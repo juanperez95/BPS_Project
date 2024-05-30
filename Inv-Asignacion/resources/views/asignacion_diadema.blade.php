@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú de la Barra Lateral</title>
+  <title>Diademas | Inv-Asignacion</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
+  <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
 </head>
 
 <body>
@@ -70,15 +71,15 @@
               <i class='bx bx-fridge'></i>
               <i class='bx bxs-fridge'></i>
             </div>
-            <span class="link hide">Proveedor</span>
+            <span class="link hide">Proveedores</span>
           </a>
         </li>
         <div class="tooltip">
           <span class="show">Diademas</span>
           <span>Componentes</span>
-          <span>Proveedores</span>
+          <span>Productos</span>
           <span>Compras</span>
-          <span>Producto</span>
+          <span>Proveedores</span>
         </div>
       </ul>
 
@@ -147,10 +148,7 @@
   <main>
     <h1>Asignación de diademas</h1>
     <p class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur animi voluptatibus cum maxime distinctio
-      iste quod deleniti eius, autem voluptates cumque suscipit iure quasi eligendi ullam. Sapiente eligendi porro
-      reprehenderit corrupti error facilis quo, fugiat fugit? Maiores aliquam ad, molestiae iste nihil, commodi
-      doloremque tempore excepturi aut id ducimus unde?
+      Asignar diademas a varios empleados de la empresa. Para hacer esto, debes seleccionar los empleados que desean asignar el diadema y luego seleccionar el diadema que se va a asignar. Puedes asignar varios diademas a un mismo empleado, siempre y cuando sea necesario.
     </p>
     <p class="copyright">
       &copy; 2024 - <span>Savijp</span> Todos los Derechos Reservados.

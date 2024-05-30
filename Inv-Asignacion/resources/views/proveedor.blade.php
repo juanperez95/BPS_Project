@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú de la Barra Lateral</title>
+  <title>Proveedor | Inv-Asignacion</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
+  <link  rel="shortcut icon" href="{{ asset('img/logo.png') }}">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
       <ul>
         <div class="active-tab"></div>
         <li class="tooltip-element" data-tooltip="0">
-          <a href="{{ url('asignacion_diadema') }}" class="active" data-active="0">
+          <a href="{{ url('asignacion_diadema') }}" data-active="0">
             <div class="icon">
               <i class='bx bx-speaker'></i>
               <i class='bx bxs-speaker'></i>
@@ -65,20 +66,20 @@
           </a>
         </li>
         <li class="tooltip-element" data-tooltip="4">
-          <a href="{{ url('proveedor') }}" data-active="3.2">
+          <a href="{{ url('proveedor') }}" class="active" data-active="3.2">
             <div class="icon">
               <i class='bx bx-fridge'></i>
               <i class='bx bxs-fridge'></i>
             </div>
-            <span class="link hide">Proveedor</span>
+            <span class="link hide">Proveedores</span>
           </a>
         </li>
         <div class="tooltip">
-          <span class="show">Diademas</span>
+          <span>Diademas</span>
           <span>Componentes</span>
-          <span>Proveedores</span>
+          <span>Productos</span>
           <span>Compras</span>
-          <span>Producto</span>
+          <span class="show">Proveedores</span>
         </div>
       </ul>
 
@@ -147,10 +148,7 @@
   <main>
     <h1>Gestion de Proveedores</h1>
     <p class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur animi voluptatibus cum maxime distinctio
-      iste quod deleniti eius, autem voluptates cumque suscipit iure quasi eligendi ullam. Sapiente eligendi porro
-      reprehenderit corrupti error facilis quo, fugiat fugit? Maiores aliquam ad, molestiae iste nihil, commodi
-      doloremque tempore excepturi aut id ducimus unde?
+      La gestión de proveedores es una de las tareas más importantes dentro de una empresa, ya que se encarga de la adquisición, almacenamiento, distribución y seguimiento de los productos o servicios que se ofrecen a los clientes. La gestión de proveedores es fundamental para que la empresa pueda funcionar de manera eficiente y eficaz, ya que permite controlar los inventarios, reducir costos y mejorar la satisfacción del cliente.
     </p>
     <p class="copyright">
       &copy; 2024 - <span>Savijp</span> Todos los Derechos Reservados.

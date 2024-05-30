@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Auth;
 // ! RUTAS PARA VISUALIZAR LAS PAGINAS
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Auth::routes();

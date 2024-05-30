@@ -5,9 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menú de la Barra Lateral</title>
+  <title>Productos | Inv-Asignacion</title>
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
+  <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
 </head>
 
 <body>
@@ -29,7 +30,7 @@
       <ul>
         <div class="active-tab"></div>
         <li class="tooltip-element" data-tooltip="0">
-          <a href="{{ url('asignacion_diadema') }}" class="active" data-active="0">
+          <a href="{{ url('asignacion_diadema') }}" data-active="0">
             <div class="icon">
               <i class='bx bx-speaker'></i>
               <i class='bx bxs-speaker'></i>
@@ -47,7 +48,7 @@
           </a>
         </li>
         <li class="tooltip-element" data-tooltip="2">
-          <a href="{{ url('producto') }}" data-active="2">
+          <a href="{{ url('producto') }}" class="active" data-active="2">
             <div class="icon">
               <i class='bx bx-purchase-tag'></i>
               <i class='bx bxs-purchase-tag'></i>
@@ -70,15 +71,15 @@
               <i class='bx bx-fridge'></i>
               <i class='bx bxs-fridge'></i>
             </div>
-            <span class="link hide">Proveedor</span>
+            <span class="link hide">Proveedores</span>
           </a>
         </li>
         <div class="tooltip">
-          <span class="show">Diademas</span>
+          <span>Diademas</span>
           <span>Componentes</span>
-          <span>Proveedores</span>
+          <span class="show">Productos</span>
           <span>Compras</span>
-          <span>Producto</span>
+          <span>Proveedores</span>
         </div>
       </ul>
 
@@ -147,10 +148,7 @@
   <main>
     <h1>Gestion de productos</h1>
     <p class="text">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur animi voluptatibus cum maxime distinctio
-      iste quod deleniti eius, autem voluptates cumque suscipit iure quasi eligendi ullam. Sapiente eligendi porro
-      reprehenderit corrupti error facilis quo, fugiat fugit? Maiores aliquam ad, molestiae iste nihil, commodi
-      doloremque tempore excepturi aut id ducimus unde?
+      Gestión de productos en inventario. Puedes agregar, editar, eliminar y ver los productos en inventario.
     </p>
     <p class="copyright">
       &copy; 2024 - <span>Savijp</span> Todos los Derechos Reservados.
