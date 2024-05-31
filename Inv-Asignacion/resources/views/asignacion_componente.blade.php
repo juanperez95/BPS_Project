@@ -9,6 +9,7 @@
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
   <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
+  <link rel="stylesheet" href="{{ url('css/tablas.css') }}">
 </head>
 
 <body>
@@ -150,12 +151,60 @@
     <p class="text">
       Asignación de componentes a los empleados. Este sistema te permite asignar componentes a los empleados de la empresa, permitiendo una mejor gestión de los recursos y una mayor eficiencia en el trabajo.
     </p>
+    <div class="container mt-5">
+            <h2 class="mb-4">Asignaciones realizadas:</h2>
+            <input type="text" id="customSearchInput" class="search-input" placeholder="Buscar en la tabla...">
+            <button type="button" class="create-btn">Crear nueva asignación</button>
+            <div class="table-responsive">
+                <table class="custom-table" id="customDataTable">
+                    <thead>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Espacio 1</th>
+                            <th>Espacio 2</th>
+                            <th>Espacio 3</th>
+                            <th>Espacio 4</th>
+                            <th>Espacio 5</th>
+                            <th>Espacio 6</th>
+                            <th>Espacio 7</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                            <th>Ocultar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Producto 1</td>
+                            <td>Diadema 1</td>
+                            <td>Diadema 2</td>
+                            <td>Diadema 3</td>
+                            <td>Diadema 4</td>
+                            <td>Diadema 5</td>
+                            <td>Diadema 6</td>
+                            <td>Diadema 7</td>
+                            <td>
+                                <button type="button" class="edit-btn">Editar</button>
+                            </td>
+                            <td>
+                              <button type="button" class="delete-btn">Eliminar</button>
+                            </td>
+                            <td>
+                              <button type="button" class="hide-btn">Ocultar</button>
+                            </td>
+                        </tr>
+                        <!-- Más filas aquí -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
     <p class="copyright">
       &copy; 2024 - <span>Savijp</span> Todos los Derechos Reservados.
     </p>
   </main>
 
   <script src="{{ url('js/dashboard.js') }}"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="tablas.js"></script>
 </body>
 
 </html>
