@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diademas | Inv-Asignacion</title>
+    <title>Asignaciones | Inv-Asignacion</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
     <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
     <link rel="stylesheet" href="{{ url('css/tablas.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 </head>
 
 <body>
@@ -31,25 +32,16 @@
             <ul>
                 <div class="active-tab"></div>
                 <li class="tooltip-element" data-tooltip="0">
-                    <a href="{{ url('asignacion_diadema') }}" class="active" data-active="0">
+                    <a href="{{ url('asignaciones') }}" data-active="0">
                         <div class="icon">
                             <i class='bx bx-speaker'></i>
                             <i class='bx bxs-speaker'></i>
                         </div>
-                        <span class="link hide">Diademas</span>
+                        <span class="link hide">Asignaciones</span>
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="1">
-                    <a href="{{ url('asignacion_componente') }}" data-active="1">
-                        <div class="icon">
-                            <i class='bx bx-book-content'></i>
-                            <i class='bx bxs-book-content'></i>
-                        </div>
-                        <span class="link hide">Componentes</span>
-                    </a>
-                </li>
-                <li class="tooltip-element" data-tooltip="2">
-                    <a href="{{ url('producto') }}" data-active="2">
+                    <a href="{{ url('producto') }}" class="active" data-active="1">
                         <div class="icon">
                             <i class='bx bx-purchase-tag'></i>
                             <i class='bx bxs-purchase-tag'></i>
@@ -57,8 +49,8 @@
                         <span class="link hide">Productos</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="3">
-                    <a href="{{ url('compra') }}" data-active="3">
+                <li class="tooltip-element" data-tooltip="2">
+                    <a href="{{ url('compra') }}" data-active="2">
                         <div class="icon">
                             <i class='bx bx-basket'></i>
                             <i class='bx bxs-basket'></i>
@@ -66,8 +58,8 @@
                         <span class="link hide">Compras</span>
                     </a>
                 </li>
-                <li class="tooltip-element" data-tooltip="4">
-                    <a href="{{ url('proveedor') }}" data-active="3.2">
+                <li class="tooltip-element" data-tooltip="3">
+                    <a href="{{ url('proveedor') }}" data-active="3">
                         <div class="icon">
                             <i class='bx bx-fridge'></i>
                             <i class='bx bxs-fridge'></i>
@@ -76,9 +68,8 @@
                     </a>
                 </li>
                 <div class="tooltip">
-                    <span class="show">Diademas</span>
-                    <span>Componentes</span>
-                    <span>Productos</span>
+                    <span>Asignaciones</span>
+                    <span class="show">Productos</span>
                     <span>Compras</span>
                     <span>Proveedores</span>
                 </div>
@@ -88,7 +79,7 @@
 
             <ul>
                 <li class="tooltip-element" data-tooltip="0">
-                    <a href="#" data-active="5">
+                    <a href="#" data-active="4">
                         <div class="icon">
                             <i class='bx bx-notepad'></i>
                             <i class='bx bxs-notepad'></i>
@@ -97,7 +88,7 @@
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="1">
-                    <a href="#" data-active="6">
+                    <a href="#" data-active="5">
                         <div class="icon">
                             <i class='bx bx-help-circle'></i>
                             <i class='bx bxs-help-circle'></i>
@@ -106,7 +97,7 @@
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="2">
-                    <a href="#" data-active="7">
+                    <a href="#" data-active="6">
                         <div class="icon">
                             <i class='bx bx-cog'></i>
                             <i class='bx bxs-cog'></i>
@@ -145,46 +136,42 @@
         </div>
     </nav>
 
-
     <main>
-        <h1>Asignación de diademas</h1>
+        <h1>Asignaciones</h1>
         <p class="text">
-            Asignar diademas a varios empleados de la empresa. Para hacer esto, debes seleccionar los empleados que
-            desean asignar el diadema y luego seleccionar el diadema que se va a asignar. Puedes asignar varios diademas
-            a un mismo empleado, siempre y cuando sea necesario.
+            La gestión de productos es un proceso fundamental en cualquier empresa, ya que permite controlar la entrada, procesamiento y salida de productos, así como generar informes y realizar análisis de tendencias y desempeño.
         </p>
         
         <div class="container mt-5">
-            <h2 class="mb-4">Asignaciones realizadas:</h2>
+            <h2 class="mb-4">Productos en stock:</h2>
             <input type="text" id="customSearchInput" class="search-input" placeholder="Buscar en la tabla...">
-            <button type="button" class="create-btn">Crear nueva asignación</button>
+            <button type="button" class="create-btn">Crear nuevo producto</button>
             <div class="table-responsive">
                 <table class="custom-table" id="customDataTable">
                     <thead>
                         <tr>
-                            <th>Producto</th>
-                            <th>Espacio 1</th>
-                            <th>Espacio 2</th>
-                            <th>Espacio 3</th>
-                            <th>Espacio 4</th>
-                            <th>Espacio 5</th>
-                            <th>Espacio 6</th>
-                            <th>Espacio 7</th>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                            <th>Ocultar</th>
+                            <th>ID</th>
+                            <th>FECHA</th>
+                            <th>SOLICITANTE</th>
+                            <th>OPERACIÓN</th>
+                            <th>CANTIDAD</th>
+                            <th>NUMERO DE CASO</th>
+                            <th>SERIAL DIADEMA</th>
+                            <th>EDITAR</th>
+                            <th>ELIMINAR</th>
+                            <th>OCULTAR</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($asignaciones as $asignacion)
                         <tr>
-                            <td>Producto 1</td>
-                            <td>Diadema 1</td>
-                            <td>Diadema 2</td>
-                            <td>Diadema 3</td>
-                            <td>Diadema 4</td>
-                            <td>Diadema 5</td>
-                            <td>Diadema 6</td>
-                            <td>Diadema 7</td>
+                            <td>{{ $asignacion->id_asignacion }}</td>
+                            <td>{{ $asignacion->fechaasignacion }}</td>
+                            <td>{{ $asignacion->solicitanteasignacion }}</td>
+                            <td>{{ $asignacion->operacionasignacion }}</td>
+                            <td>{{ $asignacion->cantidadasignacion }}</td>
+                            <td>{{ $asignacion->casoasignacion }}</td>
+                            <td>{{ $asignacion->Serialdiademaasignacion }}</td>
                             <td>
                                 <button type="button" class="edit-btn">Editar</button>
                             </td>
@@ -192,24 +179,93 @@
                               <button type="button" class="delete-btn">Eliminar</button>
                             </td>
                             <td>
-                              <button type="button" class="hide-btn">Ocultar</button>
+                                <button type="button" class="hide-btn">Ocultar</button>
                             </td>
                         </tr>
-                        <!-- Más filas aquí -->
+                        @endforeach
                     </tbody>
                 </table>
             </div>
         </div>
 
-        </button>
         <p class="copyright">
             &copy; 2024 - <span>Savijp</span> Todos los Derechos Reservados.
         </p>
     </main>
 
-    <script src="{{ url('js/dashboard.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script src="{{ url('js/dashboard.js') }}"></script>
     <script src="tablas.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.getElementById("customSearchInput");
+            const table = $('#customDataTable').DataTable({
+                "paging": true,
+                "info": true,
+                "searching": true,
+                "language": {
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "zeroRecords": "No se encontraron resultados",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ entradas",
+                    "infoEmpty": "Mostrando 0 a 0 de 0 entradas",
+                    "infoFiltered": "(filtrado de _MAX_ entradas en total)",
+                    "search": "Buscaste:",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Último",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                }
+            });
+
+            // Función de búsqueda personalizada
+            searchInput.addEventListener("keyup", function() {
+                table.search(searchInput.value).draw();
+            });
+
+            // Función para cargar datos desde la base de datos
+            function loadData() {
+                // Datos de ejemplo, reemplaza con una llamada AJAX para obtener datos de la base de datos
+                const data = [
+                    
+                ];
+
+                data.forEach(row => {
+                    table.row.add(row).draw();
+                });
+            }
+
+            // Funciones de edición, eliminación y ocultación
+            $('#customDataTable tbody').on('click', '.edit-btn', function () {
+                const row = table.row($(this).parents('tr'));
+                alert("Editar fila: " + row.index());
+                // Lógica de edición aquí
+            });
+
+            $('#customDataTable tbody').on('click', '.delete-btn', function () {
+                table.row($(this).parents('tr')).remove().draw();
+            });
+
+            $('#customDataTable tbody').on('click', '.hide-btn', function () {
+                $(this).parents('tr').hide();
+            });
+
+            function createNewAssignment() {
+                const newRow = ["Producto nuevo", "Fecha nueva", "Solicitante nuevo", "Operación nueva", "Cantidad nueva", "Caso nuevo", "Serial nuevo"];
+                const rowNode = table.row.add(newRow).draw().node();
+
+                $(rowNode).find('td').eq(7).html('<button class="edit-btn">Editar</button>');
+                $(rowNode).find('td').eq(8).html('<button class="delete-btn">Eliminar</button>');
+                $(rowNode).find('td').eq(9).html('<button class="hide-btn">Ocultar</button>');
+            }
+
+            document.querySelector(".create-btn").addEventListener("click", createNewAssignment);
+
+            loadData();
+        });
+    </script>
 </body>
 
 </html>

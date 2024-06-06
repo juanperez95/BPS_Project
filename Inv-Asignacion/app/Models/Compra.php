@@ -7,18 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Compra extends Model
 {
-    use HasFactory;
+    protected $table = 'compras';
 
-    public $timestamps = false;
+    protected $primaryKey = 'id_compra';
+
     protected $fillable = [
         'id_compra',
         'fecha_compra',
         'orden_compra',
         'cantidad_compra',
-        // llave foranea de proveedor, producto
-        'fk_producto',
-        'fk_proveedor',
+        'proveedor_id',
     ];
 
-    protected $primaryKey = 'id_compra';
+    // Aquí podrías definir relaciones con otros modelos si es necesario
 }
