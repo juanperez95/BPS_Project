@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asignaciones | Inv-Asignacion</title>
+    <title>Productos | Inv-Asignacion</title>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{ url('css/dashboard.css') }}">
     <link rel="shortcut icon" href="{{ asset('img/logo.png') }}">
@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="1">
-                    <a href="{{ url('producto') }}" class="active" data-active="1">
+                    <a href="{{ url('productos') }}" class="active" data-active="1">
                         <div class="icon">
                             <i class='bx bx-purchase-tag'></i>
                             <i class='bx bxs-purchase-tag'></i>
@@ -50,7 +50,7 @@
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="2">
-                    <a href="{{ url('compra') }}" data-active="2">
+                    <a href="{{ url('compras') }}" data-active="2">
                         <div class="icon">
                             <i class='bx bx-basket'></i>
                             <i class='bx bxs-basket'></i>
@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li class="tooltip-element" data-tooltip="3">
-                    <a href="{{ url('proveedor') }}" data-active="3">
+                    <a href="{{ url('proveedores') }}" data-active="3">
                         <div class="icon">
                             <i class='bx bx-fridge'></i>
                             <i class='bx bxs-fridge'></i>
@@ -137,7 +137,7 @@
     </nav>
 
     <main>
-        <h1>Asignaciones</h1>
+        <h1>Productos</h1>
         <p class="text">
             La gestión de productos es un proceso fundamental en cualquier empresa, ya que permite controlar la entrada, procesamiento y salida de productos, así como generar informes y realizar análisis de tendencias y desempeño.
         </p>
@@ -151,27 +151,25 @@
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>FECHA</th>
-                            <th>SOLICITANTE</th>
-                            <th>OPERACIÓN</th>
-                            <th>CANTIDAD</th>
-                            <th>NUMERO DE CASO</th>
-                            <th>SERIAL DIADEMA</th>
+                            <th>NOMBRE</th>
+                            <th>CATEGORIA</th>
+                            <th>DESCRIPCION</th>
+                            <th>STOCK</th>
+                            <th>ENTREGA</th>
                             <th>EDITAR</th>
                             <th>ELIMINAR</th>
                             <th>OCULTAR</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($asignaciones as $asignacion)
+                        @foreach ($productos as $producto)
                         <tr>
-                            <td>{{ $asignacion->id_asignacion }}</td>
-                            <td>{{ $asignacion->fechaasignacion }}</td>
-                            <td>{{ $asignacion->solicitanteasignacion }}</td>
-                            <td>{{ $asignacion->operacionasignacion }}</td>
-                            <td>{{ $asignacion->cantidadasignacion }}</td>
-                            <td>{{ $asignacion->casoasignacion }}</td>
-                            <td>{{ $asignacion->Serialdiademaasignacion }}</td>
+                            <td>{{ $producto->id_producto }}</td>
+                            <td>{{ $producto->nombre_producto }}</td>
+                            <td>{{ $producto->categoria_producto }}</td>
+                            <td>{{ $producto->descripcion_producto }}</td>
+                            <td>{{ $producto->stock_producto }}</td>
+                            <td>{{ $producto->entrega_producto }}</td>
                             <td>
                                 <button type="button" class="edit-btn">Editar</button>
                             </td>

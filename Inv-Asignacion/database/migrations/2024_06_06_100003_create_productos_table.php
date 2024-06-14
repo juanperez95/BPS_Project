@@ -15,10 +15,11 @@ class CreateProductosTable extends Migration
     {
         Schema::create('productos', function (Blueprint $table) {
             $table->id('id_producto'); // Primary Key
+            $table->string('nombre_producto');
             $table->string('categoria_producto');
             $table->string('descripcion_producto');
             $table->integer('stock_producto');
-            $table->integer('entrega_producto');
+            $table->date('entrega_producto');
             $table->integer('caso_asignacion');
             $table->unsignedBigInteger('compra_id');
             $table->foreign('compra_id')->references('id_compra')->on('compras');
@@ -33,6 +34,6 @@ class CreateProductosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asignaciones');
+        Schema::dropIfExists('productos');
     }
 }

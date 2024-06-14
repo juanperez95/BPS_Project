@@ -14,11 +14,11 @@ class Asignaciones extends Model
 
     protected $fillable = [
         'fecha_asignacion',
-        'solicitante',
-        'operacion',
-        'cantidad',
-        'numero_caso',
-        'serial_diadema',
+        'solicitante_asignacion',
+        'operacion_asignacion',
+        'cantidad_asignacion',
+        'numero_caso_asignacion',
+        'serial_diadema_asignacion',
         'id_producto',
     ];
 

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Compra; // Importa el modelo correcto
+use App\Models\Compras; // Importa el modelo correcto
 use Illuminate\Http\Request;
 
 class ComprasController extends Controller
 {
     public function index()
     {
-        $compras = Compra::all();
+        $compras = Compras::all();
         return view('compras.index', compact('compras'));
     }
 
@@ -46,15 +46,15 @@ class ComprasController extends Controller
         
         
 
-        $asignaciones->update($request->all());
+        $compras->update($request->all());
 
         return redirect()->route('compras.index')
                          ->with('success', 'Compra actualizada exitosamente.');
     }
 
-    public function destroy(Asignaciones $asignaciones)
+    public function destroy(Compras $compras)
     {
-        $asignaciones->delete();
+        $compras->delete();
 
         return redirect()->route('compras.index')
                          ->with('success', 'Compra eliminada exitosamente.');

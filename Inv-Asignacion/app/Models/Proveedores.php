@@ -6,19 +6,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Http\Controllers\ProveedorController;
 
-class Proveedor extends Model
+class Proveedores extends Model
 {
-    protected $table = 'proveedor';
+    protected $table = 'proveedores';
     public $primaryKey = 'id_proveedor';
 
     protected $fillable = [
         'id_proveedor',
-        'nombre',
-        'nit',
-        'direccion',
-        'telefono',
-        'email',
-        'estado',
+        'nombre_proveedor',
+        'nit_proveedor',
+        'direccion_proveedor',
+        'telefono_proveedor',
+        'email_proveedor',
+        'estado_proveedor',
     ];
     public $timestamps = false;
 

@@ -31,6 +31,6 @@ class CreateComprasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asignaciones');
+        Schema::dropIfExists('compras');
     }
 }

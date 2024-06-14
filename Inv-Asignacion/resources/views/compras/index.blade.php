@@ -147,7 +147,7 @@
         <div class="container mt-5">
             <h2 class="mb-4">Compras realizadas:</h2>
             <input type="text" id="customSearchInput" class="search-input" placeholder="Buscar en la tabla...">
-            <button type="button" class="create-btn">Crear nueva asignación</button>
+            <button type="button" class="create-btn">Registrar compra</button>
             <div class="table-responsive">
                 <table class="custom-table" id="customDataTable">
                     <thead>
