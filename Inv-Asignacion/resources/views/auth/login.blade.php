@@ -12,17 +12,23 @@
   <div class="container">
     <div class="forms-container">
       <div class="signin-signup">
-        <form action="#" class="sign-in-form">
+        <form action="{{ route('login.store') }}" method="POST" class="sign-in-form">
+          @csrf
           <h2 class="title">Iniciar sesión | Inv Asignacion</h2>
           <div class="input-field">
             <i class="fas fa-user"></i>
-            <input type="text" placeholder="Usuario" />
+            <input type="text" name="email" placeholder="Correo electrónico" required />
           </div>
           <div class="input-field">
             <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Contraseña" />
+            <input type="password" name="password" placeholder="Contraseña" required />
           </div>
           <input type="submit" value="Iniciar sesión" class="btn solid" />
+          @if(session('mensaje'))
+          <div class="alert alert-danger">
+            {{ session('mensaje') }}
+          </div>
+          @endif
           <p class="social-text">O inicia sesión con tus redes sociales</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -39,22 +45,44 @@
             </a>
           </div>
         </form>
-        <form action="#" class="sign-up-form">
+        
+        <form class="sign-up-form needs-validation" action="{{ route('register.user.store') }}" method="POST" novalidate>
           <h2 class="title">Registrarse | Inv Asignacion</h2>
+          @csrf
+      
+          @if ($errors->any())
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                  <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+          @endif
+      
           <div class="input-field">
-            <i class="fas fa-user"></i>
-            <input type="text" placeholder="Usuario" />
+              <i class="fas fa-user"></i>
+              <input type="text" name="Usuario" placeholder="Usuario" />
           </div>
           <div class="input-field">
-            <i class="fas fa-envelope"></i>
-            <input type="email" placeholder="Correo electrónico" />
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="Email" placeholder="Correo electrónico" />
           </div>
           <div class="input-field">
-            <i class="fas fa-lock"></i>
-            <input type="password" placeholder="Contraseña" />
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="Email confirmacion" placeholder="Correo electrónico confirmación" />
+          </div>
+          <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="Contraseña" placeholder="Contraseña" />
+              <i id="password-toggle-icon" class="fas fa-eye" onclick="togglePasswordVisibility()"></i>
+          </div>
+          <div class="input-field">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="Contraseña confirmacion" placeholder="Contraseña confirmación" />
           </div>
           <input type="submit" class="btn" value="Registrarse" />
-          <p class="social-text">O registrese con sus redes sociales</p>
+          <p class="social-text">O regístrate con tus redes sociales</p>
           <div class="social-media">
             <a href="#" class="social-icon">
               <i class="fab fa-facebook-f"></i>

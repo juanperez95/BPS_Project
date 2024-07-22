@@ -81,3 +81,28 @@ Route::get('proveedores/{proveedores}', [ProveedoresController::class, 'show'])-
 Route::get('proveedores/{proveedores}/edit', [ProveedoresController::class, 'edit'])->name('proveedores.edit');
 Route::put('proveedores/{proveedores}', [ProveedoresController::class, 'update'])->name('proveedores.update');
 Route::delete('proveedores/{proveedores}', [ProveedoresController::class, 'destroy'])->name('proveedores.destroy');
+
+
+
+use App\Http\Controllers\RegisterUsersController;
+
+// Ruta para mostrar el formulario de registro
+Route::get('/register', [RegisterUsersController::class, 'create'])->name('register.user.create');
+
+// Ruta para almacenar un nuevo usuario
+Route::post('/register', [RegisterUsersController::class, 'store'])->name('register.user.store');
+
+// Otras rutas necesarias para el controlador
+Route::get('/users', [RegisterUsersController::class, 'index'])->name('user.index');
+Route::get('/users/edit/{document}', [RegisterUsersController::class, 'edit'])->name('user.edit');
+Route::post('/users/update/{document}', [RegisterUsersController::class, 'update'])->name('user.update');
+Route::delete('/users/destroy/{document}', [RegisterUsersController::class, 'destroy'])->name('user.destroy');
+
+
+use App\Http\Controllers\LoginController;
+
+// Ruta para mostrar el formulario de inicio de sesión
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+
+// Ruta para procesar el inicio de sesión
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
