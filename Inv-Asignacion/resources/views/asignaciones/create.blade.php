@@ -1,3 +1,5 @@
+@extends('layouts.cierre')
+
 <!-- create.blade.php -->
 <div id="createAsignacionesModal" class="modal-unique">
     <div class="modal-content-unique">

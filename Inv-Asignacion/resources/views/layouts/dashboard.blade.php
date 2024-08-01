@@ -1,4 +1,13 @@
-<nav>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+</head>
+<body>
+    <nav>
         <div class="sidebar-top">
             <span class="shrink-btn">
                 <i class='bx bx-chevron-left'></i>
@@ -109,13 +118,51 @@
                         <h5>Administrador</h5>
                     </div>
                 </div>
-                <a href="#" class="log-out">
-                    <i class='bx bx-log-out'></i>
-                </a>
-            </div>
-            <div class="tooltip">
-                <span class="show">Santiago Forero</span>
-                <span>Cerrar Sesión</span>
-            </div>
+                <div class="sidebar-footer">
+            <a href="#" class="log-out" onclick="logout(event)">
+                <i class='bx bx-log-out'></i>
+            </a>
         </div>
     </nav>
+
+    <!-- Script para manejar el cierre de sesión -->
+    <script>
+        function logout(event) {
+            if (event) event.preventDefault();
+            fetch('{{ route('logout') }}', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    window.location.href = '{{ route('login') }}';
+                }
+            });
+        }
+
+        // Función para detectar inactividad
+        let inactivityTime = function () {
+            let time;
+            window.onload = resetTimer;
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
+            document.onscroll = resetTimer;
+            document.onclick = resetTimer;
+            
+            function logoutAfterInactivity() {
+                alert("Se ha cerrado la sesión por inactividad.");
+                logout(); // Llama a la función de logout
+            }
+            
+            function resetTimer() {
+                clearTimeout(time);
+                time = setTimeout(logoutAfterInactivity, 180000); // Tiempo en milisegundos (180000 ms = 3 minutos)
+            }
+        };
+
+        inactivityTime(); // Inicia la función de detección de inactividad
+    </script>
+</body>
+</html>

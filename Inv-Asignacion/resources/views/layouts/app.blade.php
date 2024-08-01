@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -14,7 +15,9 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @if (file_exists(public_path('build/manifest.json')))
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @endif
 </head>
 <body>
     <div id="app">

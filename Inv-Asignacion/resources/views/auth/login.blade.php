@@ -29,6 +29,7 @@
             {{ session('mensaje') }}
           </div>
           @endif
+        </form>
           <p class="social-text">O inicia sesión con tus redes sociales</p>
           <div class="social-media">
             <a href="#" class="social-icon">
@@ -44,7 +45,6 @@
               <i class="fab fa-linkedin-in"></i>
             </a>
           </div>
-        </form>
         
         <form class="sign-up-form needs-validation" action="{{ route('register.user.store') }}" method="POST" novalidate>
           <h2 class="title">Registrarse | Inv Asignacion</h2>

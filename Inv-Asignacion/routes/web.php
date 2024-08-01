@@ -42,13 +42,15 @@ Route::get('/usuarios', function () {
 
 use App\Http\Controllers\AsignacionesController;
 // ? Rutas para asignaciones
-Route::get('asignaciones', [AsignacionesController::class, 'index'])->name('asignaciones.index');
-Route::get('asignaciones/create', [AsignacionesController::class, 'create'])->name('asignaciones.create');
-Route::post('asignaciones', [AsignacionesController::class, 'store'])->name('asignaciones.store');
-Route::get('asignaciones/{asignaciones}', [AsignacionesController::class, 'show'])->name('asignaciones.show');
-Route::get('asignaciones/{asignaciones}/edit', [AsignacionesController::class, 'edit'])->name('asignaciones.edit');
-Route::put('asignaciones/{asignaciones}', [AsignacionesController::class, 'update'])->name('asignaciones.update');
-Route::delete('asignaciones/{asignaciones}', [AsignacionesController::class, 'destroy'])->name('asignaciones.destroy');
+Route::controller(AsignacionesController::class)->group(function () {
+    Route::get('asignaciones', 'index')->name('asignaciones.index');
+    Route::get('asignaciones/create', 'create')->name('asignaciones.create');
+    Route::post('asignaciones', 'store')->name('asignaciones.store');
+    Route::get('asignaciones/{asignaciones}', 'show')->name('asignaciones.show');
+    Route::get('asignaciones/{asignaciones}/edit', 'edit')->name('asignaciones.edit');
+    Route::put('asignaciones/{asignaciones}', 'update')->name('asignaciones.update');
+    Route::delete('asignaciones/{asignaciones}', 'destroy')->name('asignaciones.destroy');
+});
 
 
 use App\Http\Controllers\ComprasController;
@@ -106,3 +108,10 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 
 // Ruta para procesar el inicio de sesión
 Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+
+//Ruta para iniciar el dashboard
+
+Route::get('/dashboard', [LoginController::class, 'dashboard'])->name('dashboard')->middleware('auth');
+
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
