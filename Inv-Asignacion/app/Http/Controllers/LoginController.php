@@ -25,11 +25,11 @@ class LoginController extends Controller
         }
 
         // Redirigir al usuario a la página de dashboard si las credenciales son correctas
-        return redirect()->route('dashboard');
+        return redirect()->route('asignaciones.index');
     }
 
     public function dashboard(){
-        return view('layouts.dashboard');
+        return view('asignaciones.index');
     }
 
     public function logout(Request $request)

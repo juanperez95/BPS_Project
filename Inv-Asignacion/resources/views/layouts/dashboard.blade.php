@@ -114,8 +114,8 @@
                 <div class="admin-profile hide">
                     <img src="./img/face-1.png" alt="">
                     <div class="admin-info">
-                        <h3>Santiago Forero</h3>
-                        <h5>Administrador</h5>
+                    <h3>{{ Auth::user()->name }}</h3>
+                    <h5>Administrador</h5>
                     </div>
                 </div>
                 <div class="sidebar-footer">

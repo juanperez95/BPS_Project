@@ -10,7 +10,7 @@ class AsignacionesController extends Controller
     public function index()
     {
         $asignaciones = Asignaciones::all(); // Obtiene todas las asignaciones de la base de datos
-        return view('asignaciones.index', compact('asignaciones')); // Pasa las asignaciones a la vista
+        return view('asignaci nes.index', compact('asignaciones')); // Pasa las asignaciones a la vista
     }
 
     public function create()
@@ -20,14 +20,20 @@ class AsignacionesController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            
-        ]);
+        $asignaciones = new Asignaciones();
+        $asignaciones->fecha_asignacion = $request->input('fecha_asignacion');
+        $asignaciones->solicitante_asignacion = $request->input('solicitante_asignacion');
+        $asignaciones->operacion_asignacion = $request->input('operacion_asignacion');
+        $asignaciones->id_asignacion = $request->input('id_asignacion'); 
+        $asignaciones->serial_diadema_asignacion = $request->input('serial_diadema_asignacion');
+        $asignaciones->producto_id = $request->input('producto_id');
+        $asignaciones->cantidad_asignacion = $request->input('cantidad_asignacion');
+        $asignaciones->caso_asignacion = $request->input('caso_asignacion');
 
-        Asignaciones::create($request->all());
+        $asignaciones->save();
 
-        return redirect()->route('asignaciones.index')
-                         ->with('success', 'Asignación creada exitosamente.');
+        return redirect()->route('asignaciones.index');
+
     }
 
     public function show(Asignaciones $asignaciones)

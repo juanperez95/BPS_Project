@@ -1,4 +1,3 @@
-@extends('layouts.cierre')
 
 <!-- create.blade.php -->
 <div id="createAsignacionesModal" class="modal-unique">
@@ -8,19 +7,28 @@
         <form action="{{ route('asignaciones.store') }}" method="POST">
             @csrf
             <label for="fecha_asignacion">Fecha de la asignación:</label>
-            <input type="date" id="fecha_asignacion" name="fecha_asignacion" required>
+            <input type="date" id="fecha_asignacion" name="fecha_asignacion" placeholder="fecha_asignacion" required>
 
             <label for="solicitante_asignacion">Solicitante de la asignacion:</label>
-            <input type="select" id="solicitante_asignacion" name="solicitante_asignacion">
+            <input type="select" id="solicitante_asignacion" name="solicitante_asignacion" placeholder="solicitante_asignacion" required>
+            
+            <label for="operacion_asignacion">Operacion:</label>
+            <input type="select" id="operacion_asignacion" name="operacion_asignacion" placeholder="operacion_asignacion" required>
 
-            <label for="numero_caso_asignacion">Número de caso:</label>
-            <input type="number" id="numero_caso_asignacion" name="numero_caso_asignacion">
+            <label for="id_asignacion">Número de caso:</label>
+            <input type="number" id="id_asignacion" name="id_asignacion" placeholder="id_asignacion" required>
 
             <label for="serial_diadema_asignacion">Serial diadema:</label>
-            <input type="number" id="serial_diadema_asignacion" name="serial_diadema_asignacion">
+            <input type="number" id="serial_diadema_asignacion" name="serial_diadema_asignacion" placeholder="serial_diadema_asignacion" required>
 
-            <label for="id_producto">Producto:</label>
-            <input type="number" id="id_producto" name="id_producto">
+            <label for="producto_id">Producto:</label>
+            <input type="number" id="producto_id" name="producto_id" placeholder="producto_id" required>
+
+            <label for="cantidad_asignacion">Cantidad: </label>
+            <input type="number" id="cantidad_asignacion" name="cantidad_asignacion" placeholder="cantidad_asignacion" required>
+
+            <label for="caso_asignacion">Caso de la asignacion: </label>
+            <input type="number" id="caso_asignacion" name="caso_asignacion" placeholder="caso_asignacion" required>
 
             <button type="submit">Crear asignación</button>
         </form>
