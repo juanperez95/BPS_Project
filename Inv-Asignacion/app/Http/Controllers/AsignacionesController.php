@@ -10,7 +10,7 @@ class AsignacionesController extends Controller
     public function index()
     {
         $asignaciones = Asignaciones::all(); // Obtiene todas las asignaciones de la base de datos
-        return view('asignaci nes.index', compact('asignaciones')); // Pasa las asignaciones a la vista
+        return view('asignaciones.index', compact('asignaciones')); // Pasa las asignaciones a la vista
     }
 
     public function create()

@@ -20,14 +20,21 @@ class ProductosController extends Controller
 
     public function store(Request $request)
     {
-        $request->validate([
-            
-        ]);
 
-        Productos::create($request->all());
+        $productos = new Productos();
 
-        return redirect()->route('productos.index')
-                         ->with('success', 'Producto creado exitosamente.');
+        $productos->nombre_producto = $request->input('nombre_producto');
+        $productos->categoria_producto = $request->input('categoria_producto');
+        $productos->descripcion_producto = $request->input('descripcion_producto');
+        $productos->stock_producto = $request->input('stock_producto');
+        $productos->entrega_producto = $request->input('entrega_producto');
+
+        $productos->save();
+
+        return redirect()->route('productos.index');
+
+
+
     }
 
     public function show(Productos $productos)
