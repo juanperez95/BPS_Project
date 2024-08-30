@@ -11,11 +11,8 @@
             <label for="categoria_producto">Categoria del producto:</label>
             <input type="select" id="categoria_producto" name="categoria_producto">
 
-            <label for="descripcion_producto">Descripcion del producto:</label>
+            <label for="descripcion_producto">Cantidad de productos:</label>
             <input type="text" id="descripcion_producto" name="descripcion_producto">
-
-            <label for="stock_producto">Cantidad de productos:</label>
-            <input type="text" id="stock_producto" name="stock_producto">
 
             <label for="entrega_producto">Fecha de entrega de los productos:</label>
             <input type="date" id="entrega_producto" name="entrega_producto">

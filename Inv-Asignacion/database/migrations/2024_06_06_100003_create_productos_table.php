@@ -20,6 +20,7 @@ class CreateProductosTable extends Migration
             $table->string('descripcion_producto');
             $table->integer('stock_producto');
             $table->date('entrega_producto');
+            $table->integer('caso_asignacion');
             $table->unsignedBigInteger('compra_id');
             $table->foreign('compra_id')->references('id_compra')->on('compras');
             $table->timestamps(); // Adds created_at and updated_at columns
